@@ -1,4 +1,4 @@
-﻿/// <reference path="../constants.ts" />
+/// <reference path="../constants.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../objects/plane.ts" />
 /// <reference path="../objects/ocean.ts" />
@@ -17,35 +17,40 @@ var states;
         changeState(currentState);
     }
     states.playButtonClicked = playButtonClicked;
-
+    function instructionBtnClicked(event) {
+        stage.removeChild(game);
+        plane.destroy();
+        game.removeAllChildren();
+        game.removeAllEventListeners();
+        currentState = constants.INSTRUCTION_STATE;
+        changeState(currentState);
+    }
+    states.instructionBtnClicked = instructionBtnClicked;
     function menuState() {
         ocean.update();
         plane.update();
     }
     states.menuState = menuState;
-
     function menu() {
         var gameNameLabel;
-
         // Declare new Game Container
         game = new createjs.Container();
-
         // Instantiate Game Objects
         ocean = new objects.Ocean(stage, game);
         plane = new objects.Plane(stage, game);
-
         // Show Cursor
         stage.cursor = "default";
-
         // Display Game Over
         gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "MAIL PILOT");
         game.addChild(gameNameLabel);
-
-        // Display Play Again Button
+        // Display Instruction Button
+        instructionBtn = new objects.Button(stage.canvas.width / 2, 230, "instructionsButton");
+        game.addChild(instructionBtn);
+        instructionBtn.addEventListener("click", instructionBtnClicked);
+        // Display Play game Button
         playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
-
         stage.addChild(game);
     }
     states.menu = menu;

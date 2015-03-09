@@ -1,4 +1,4 @@
-﻿/// <reference path="../managers/asset.ts" />
+/// <reference path="../managers/asset.ts" />
 var objects;
 (function (objects) {
     // Plane Class
