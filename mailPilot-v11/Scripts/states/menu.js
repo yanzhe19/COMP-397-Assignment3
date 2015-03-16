@@ -27,7 +27,7 @@ var states;
     }
     states.instructionBtnClicked = instructionBtnClicked;
     function menuState() {
-        ocean.update();
+        sea.update();
         plane.update();
     }
     states.menuState = menuState;
@@ -36,8 +36,8 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        ocean = new objects.Sea(stage, game);
-        console.log(ocean);
+        sea = new objects.Sea(stage, game);
+        console.log(sea);
         plane = new objects.Plane(stage, game);
         // Show Cursor
         stage.cursor = "default";

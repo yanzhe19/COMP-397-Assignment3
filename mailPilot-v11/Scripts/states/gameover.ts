@@ -8,7 +8,7 @@
 /// <reference path="../objects/scoreboard.ts" />
 module states {
     export function gameOverState() {
-        ocean.update();
+        sea.update();
     }
 
     // Restart Game when Try Again Button is clicked
@@ -30,7 +30,7 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        ocean = new objects.Sea(stage, game);
+        sea = new objects.Sea(stage, game);
 
         // Show Cursor
         stage.cursor = "default";

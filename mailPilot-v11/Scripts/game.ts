@@ -19,7 +19,7 @@
 var stage: createjs.Stage;
 var game: createjs.Container;
 
-var ocean: objects.Sea;
+var sea: objects.Sea;
 var plane: objects.Plane;
 var island: objects.Island;
 var clouds = []; // Clouds array;

@@ -16,7 +16,7 @@
 // Changed online repo
 var stage;
 var game;
-var ocean;
+var sea;
 var plane;
 var island;
 var clouds = []; // Clouds array;

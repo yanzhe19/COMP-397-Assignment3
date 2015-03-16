@@ -9,7 +9,7 @@
 var states;
 (function (states) {
     function playState() {
-        ocean.update();
+        sea.update();
         island.update();
         plane.update();
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
@@ -32,7 +32,7 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        ocean = new objects.Sea(stage, game);
+        sea = new objects.Sea(stage, game);
         island = new objects.Island(stage, game);
         plane = new objects.Plane(stage, game);
         // Show Cursor

@@ -26,7 +26,7 @@ module states {
     }
 
     export function menuState() {
-        ocean.update();
+        sea.update();
         plane.update();
     }
 
@@ -37,8 +37,8 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        ocean = new objects.Sea(stage, game);
-        console.log(ocean)
+        sea = new objects.Sea(stage, game);
+        console.log(sea)
         plane = new objects.Plane(stage, game);
 
         // Show Cursor

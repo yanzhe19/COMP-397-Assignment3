@@ -8,7 +8,7 @@
 /// <reference path="../managers/collision.ts" />
 module states {
     export function playState() {
-        ocean.update();
+        sea.update();
         island.update();
         plane.update();
 
@@ -35,7 +35,7 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        ocean = new objects.Sea(stage, game);
+        sea = new objects.Sea(stage, game);
         island = new objects.Island(stage, game);
         plane = new objects.Plane(stage, game);
 
