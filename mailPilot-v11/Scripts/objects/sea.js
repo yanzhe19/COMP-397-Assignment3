@@ -2,8 +2,8 @@
 var objects;
 (function (objects) {
     // Ocean Class
-    var Ocean = (function () {
-        function Ocean(stage, game) {
+    var Sea = (function () {
+        function Sea(stage, game) {
             this.stage = stage;
             this.game = game;
             this.image = new createjs.Bitmap(managers.Assets.loader.getResult("sea"));
@@ -13,20 +13,20 @@ var objects;
             this.dx = 3;
             game.addChild(this.image);
         }
-        Ocean.prototype.update = function () {
+        Sea.prototype.update = function () {
             this.image.x += this.dx;
             if (this.image.x >= 0) {
                 this.reset();
             }
         };
-        Ocean.prototype.reset = function () {
+        Sea.prototype.reset = function () {
             this.image.x = -638;
         };
-        Ocean.prototype.destroy = function () {
+        Sea.prototype.destroy = function () {
             game.removeChild(this.image);
         };
-        return Ocean;
+        return Sea;
     })();
-    objects.Ocean = Ocean;
+    objects.Sea = Sea;
 })(objects || (objects = {}));
-//# sourceMappingURL=ocean.js.map
+//# sourceMappingURL=sea.js.map

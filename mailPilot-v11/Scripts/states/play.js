@@ -2,7 +2,7 @@
 /// <reference path="../objects/cloud.ts" />
 /// <reference path="../objects/island.ts" />
 /// <reference path="../objects/label.ts" />
-/// <reference path="../objects/ocean.ts" />
+/// <reference path="../objects/sea.ts" />
 /// <reference path="../objects/plane.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../managers/collision.ts" />
@@ -32,7 +32,7 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        ocean = new objects.Ocean(stage, game);
+        ocean = new objects.Sea(stage, game);
         island = new objects.Island(stage, game);
         plane = new objects.Plane(stage, game);
         // Show Cursor

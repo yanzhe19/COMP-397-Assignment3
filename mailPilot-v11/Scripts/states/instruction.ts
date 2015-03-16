@@ -1,14 +1,4 @@
-﻿/// <reference path="../constants.ts" />
-/// <reference path="../objects/button.ts" />
-/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/label.ts" />
-/// <reference path="../objects/ocean.ts" />
-/// <reference path="../objects/plane.ts" />
-/// <reference path="../objects/scoreboard.ts" />
-//This is the state for instruction
-module states {
-
+﻿module states {
     // Instruction State
     export function instructionState() {
         ocean.update();
@@ -32,7 +22,7 @@ module states {
 
         game = new createjs.Container();
 
-        ocean = new objects.Ocean(stage, game);
+        ocean = new objects.Sea(stage, game);
 
         // Show Cursor
         stage.cursor = "default";

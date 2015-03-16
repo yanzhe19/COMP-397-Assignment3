@@ -2,7 +2,7 @@
 /// <reference path="managers/asset.ts" />
 /// <reference path="objects/cloud.ts" />
 /// <reference path="objects/island.ts" />
-/// <reference path="objects/ocean.ts" />
+/// <reference path="objects/sea.ts" />
 /// <reference path="objects/plane.ts" />
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/label.ts" />
@@ -10,6 +10,7 @@
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/play.ts" />
 /// <reference path="states/menu.ts" />
+/// <reference path="states/instruction.ts" />
 /// <reference path="states/gameover.ts" />
 
 // Mail Pilot Version 11 - Added basic state machine structure - Added Button and Label classes
@@ -18,7 +19,7 @@
 var stage: createjs.Stage;
 var game: createjs.Container;
 
-var ocean: objects.Ocean;
+var ocean: objects.Sea;
 var plane: objects.Plane;
 var island: objects.Island;
 var clouds = []; // Clouds array;

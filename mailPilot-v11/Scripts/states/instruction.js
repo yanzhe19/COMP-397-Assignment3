@@ -1,12 +1,3 @@
-/// <reference path="../constants.ts" />
-/// <reference path="../objects/button.ts" />
-/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/label.ts" />
-/// <reference path="../objects/ocean.ts" />
-/// <reference path="../objects/plane.ts" />
-/// <reference path="../objects/scoreboard.ts" />
-//This is the state for instruction
 var states;
 (function (states) {
     // Instruction State
@@ -29,7 +20,7 @@ var states;
     function instructionScene() {
         var instructionsLabel;
         game = new createjs.Container();
-        ocean = new objects.Ocean(stage, game);
+        ocean = new objects.Sea(stage, game);
         // Show Cursor
         stage.cursor = "default";
         // Display Instruction
