@@ -1,6 +1,6 @@
 /// <reference path="../objects/submarine.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/smallFish.ts" />
+/// <reference path="../objects/fish.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 var managers;
 (function (managers) {

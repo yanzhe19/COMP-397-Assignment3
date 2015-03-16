@@ -28,7 +28,7 @@ var objects;
             this.image.y = Math.floor(Math.random() * (this.stage.canvas.height - 100) + 100);
             this.dx = Math.floor(Math.random() * 5 + 2);
             this.dy = Math.floor(Math.random() * -5) + Math.floor(Math.random() * 5);
-            this.image.x = 640 + this.width;
+            this.image.x = this.stage.canvas.width + this.width;
         };
         Submarine.prototype.destroy = function () {
             game.removeChild(this.image);

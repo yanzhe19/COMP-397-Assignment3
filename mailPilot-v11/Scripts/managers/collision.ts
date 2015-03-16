@@ -1,18 +1,18 @@
 ﻿/// <reference path="../objects/submarine.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/smallFish.ts" />
+/// <reference path="../objects/fish.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 
 module managers {
     // Collision Manager Class
     export class Collision {
         // class variables
-        private plane: objects.Plane;
-        private island: objects.Island;
+        private plane: objects.Fish;
+        private island: objects.SmallFish;
         private clouds = [];
         private scoreboard: objects.Scoreboard;
 
-        constructor(plane: objects.Plane, island: objects.Island, clouds, scoreboard: objects.Scoreboard) {
+        constructor(plane: objects.Fish, island: objects.SmallFish, clouds, scoreboard: objects.Scoreboard) {
             this.plane = plane;
             this.island = island;
             this.clouds = clouds;
