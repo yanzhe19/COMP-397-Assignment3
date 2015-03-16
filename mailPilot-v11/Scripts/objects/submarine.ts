@@ -15,6 +15,7 @@ module objects {
             this.image = new createjs.Sprite(managers.Assets.atlas, "submarine");
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
+            console.log(this.width,this.height);
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
             this.reset();
