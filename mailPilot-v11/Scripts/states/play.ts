@@ -1,5 +1,5 @@
 ﻿/// <reference path="../objects/button.ts" />
-/// <reference path="../objects/cloud.ts" />
+/// <reference path="../objects/submarine.ts" />
 /// <reference path="../objects/island.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/sea.ts" />
@@ -44,7 +44,8 @@ module states {
 
         // Create multiple clouds
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
-            clouds[count] = new objects.Cloud(stage, game);
+            clouds[count] = new objects.Submarine(stage, game);
+            console.log(clouds[count]);
         }
 
         // Display Scoreboard

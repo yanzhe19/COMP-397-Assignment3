@@ -1,7 +1,7 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
-    // Cloud class
-    export class Cloud {
+    // submarine class
+    export class Submarine {
         image: createjs.Sprite;
         stage: createjs.Stage;
         game: createjs.Container;
@@ -12,7 +12,7 @@ module objects {
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "cloud");
+            this.image = new createjs.Sprite(managers.Assets.atlas, "submarine");
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
@@ -23,18 +23,21 @@ module objects {
         }
 
         update() {
-            this.image.y += this.dy;
-            this.image.x += this.dx;
-            if (this.image.y > this.stage.canvas.height + this.height) {
+            this.image.x -= this.dx;
+            if (this.image.x < -this.width) {
                 this.reset();
+            }
+
+            if (this.image.y <= 120) {
+                this.image.y += Math.abs(this.dy);
             }
         }
 
         reset() {
-            this.image.x = Math.floor(Math.random() * this.stage.canvas.width);
-            this.dy = Math.floor(Math.random() * 5 + 5);
-            this.dx = Math.floor(Math.random() * -3) + Math.floor(Math.random() * 3);
-            this.image.y = -this.height;
+            this.image.y = Math.floor(Math.random() * (this.stage.canvas.height -100) + 100);
+            this.dx = Math.floor(Math.random() * 5 + 2);
+            this.dy = Math.floor(Math.random() * -5) + Math.floor(Math.random() * 5);
+            this.image.x = 640 + this.width;
         }
 
         destroy() {

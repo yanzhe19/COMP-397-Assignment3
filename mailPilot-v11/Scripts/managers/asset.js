@@ -11,22 +11,41 @@ var managers;
     ];
     // SpriteSheet Data Object
     var spriteSheetData = {
+        //"images": ["assets/images/atlas.png"],
+        //"frames": [
+        //    [2, 2, 226, 178],
+        //    [230, 2, 211, 69],
+        //    [443, 69, 62, 63],
+        //    [443, 2, 65, 65],
+        //    [230, 73, 211, 69],
+        //    [230, 144, 211, 69]
+        //],
+        //"animations": {
+        //    "cloud": [0],
+        //    "instructionsButton": [1],
+        //    "island": [2],
+        //    "plane": [3],
+        //    "playButton": [4],
+        //    "tryAgainButton": [5]
+        //}
         "images": ["assets/images/atlas.png"],
         "frames": [
-            [2, 2, 226, 178],
-            [230, 2, 211, 69],
-            [443, 69, 62, 63],
-            [443, 2, 65, 65],
-            [230, 73, 211, 69],
-            [230, 144, 211, 69]
+            [229, 2, 200, 100],
+            [431, 2, 200, 100],
+            [229, 104, 200, 100],
+            [431, 104, 200, 100],
+            [2, 150, 120, 82],
+            [124, 150, 70, 63],
+            [2, 2, 225, 146]
         ],
         "animations": {
-            "cloud": [0],
-            "instructionsButton": [1],
-            "island": [2],
-            "plane": [3],
-            "playButton": [4],
-            "tryAgainButton": [5]
+            "btnBack": [0],
+            "btnInstruction": [1],
+            "btnPlay": [2],
+            "btnTryAgain": [3],
+            "fish": [4],
+            "smallFish": [5],
+            "submarine": [6]
         }
     };
     // Asset Manager Class

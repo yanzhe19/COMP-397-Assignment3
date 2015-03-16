@@ -1,6 +1,6 @@
 ﻿/// <reference path="constants.ts" />
 /// <reference path="managers/asset.ts" />
-/// <reference path="objects/cloud.ts" />
+/// <reference path="objects/submarine.ts" />
 /// <reference path="objects/island.ts" />
 /// <reference path="objects/sea.ts" />
 /// <reference path="objects/plane.ts" />

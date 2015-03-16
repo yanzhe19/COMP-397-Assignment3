@@ -11,8 +11,8 @@ module objects {
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "plane");
-            this.image.y = 430;
+            this.image = new createjs.Sprite(managers.Assets.atlas, "fish");
+            
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
@@ -24,6 +24,10 @@ module objects {
 
         update() {
             this.image.x = this.stage.mouseX;
+            if (this.stage.mouseY <= 120){
+                this.image.y = 120;
+            }
+            else this.image.y = this.stage.mouseY;
         }
         destroy() {
             this.engineSound.stop();

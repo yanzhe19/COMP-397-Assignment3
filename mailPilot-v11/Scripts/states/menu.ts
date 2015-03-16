@@ -3,7 +3,7 @@
 /// <reference path="../objects/plane.ts" />
 /// <reference path="../objects/sea.ts" />
 /// <reference path="../objects/island.ts" />
-/// <reference path="../objects/cloud.ts" />
+/// <reference path="../objects/submarine.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
 module states {
@@ -38,7 +38,6 @@ module states {
 
         // Instantiate Game Objects
         sea = new objects.Sea(stage, game);
-        console.log(sea)
         plane = new objects.Plane(stage, game);
 
         // Show Cursor
@@ -49,12 +48,12 @@ module states {
         game.addChild(gameNameLabel);
 
         // Display Instruction Button
-        instructionBtn = new objects.Button(stage.canvas.width / 2, 230, "instructionsButton");
+        instructionBtn = new objects.Button(stage.canvas.width / 2, 230, "btnInstruction");
         game.addChild(instructionBtn);
         instructionBtn.addEventListener("click", instructionBtnClicked);
 
         // Display Play game Button
-        playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
+        playButton = new objects.Button(stage.canvas.width / 2, 300, "btnPlay");
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
 

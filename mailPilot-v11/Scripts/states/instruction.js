@@ -29,8 +29,9 @@ var states;
             "This is the Big Fish game, ",
             "you can use your mouse to move the fish",
             "If you eat one small fish, you win points",
-            "If you collide with submarine, you lose one life",
-            "you have three life in total",
+            "Win as much points as possible!",
+            "However, if you collide with submarine, ",
+            "you lose one life, you have three life in total",
             "Have Fun!"
         ];
         for (var line = 0; line < instructionsStringArray.length; line++) {
@@ -41,7 +42,7 @@ var states;
             console.log(actualInstructionsLine[line]);
         }
         // Display Go Back Button
-        goBackBtn = new objects.Button(stage.canvas.width / 2, 300, "tryAgainButton");
+        goBackBtn = new objects.Button(stage.canvas.width / 2, 300, "btnBack");
         game.addChild(goBackBtn);
         goBackBtn.addEventListener("click", goBackBtnClicked);
         stage.addChild(game);
