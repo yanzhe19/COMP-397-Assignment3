@@ -54,7 +54,7 @@ module states {
         // Create multiple clouds
         for (var count = 0; count < constants.SUBMARINE_NUM; count++) {
             submarines[count] = new objects.Submarine(stage, game);
-            console.log(submarines[count]);
+            //console.log(submarines[count]);
         }
 
         // Display Scoreboard

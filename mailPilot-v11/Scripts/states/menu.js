@@ -12,7 +12,7 @@ var states;
     //event listener when play button of menu screen clicked
     function playButtonClicked(event) {
         stage.removeChild(game);
-        plane.destroy();
+        fish.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
         currentState = constants.PLAY_STATE;
@@ -22,7 +22,7 @@ var states;
     //event listener when instruction button of menu screen clicked
     function instructionBtnClicked(event) {
         stage.removeChild(game);
-        plane.destroy();
+        fish.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
         currentState = constants.INSTRUCTION_STATE;
@@ -32,7 +32,7 @@ var states;
     //menu state function, updates for menu states
     function menuState() {
         sea.update();
-        plane.update();
+        fish.update();
     }
     states.menuState = menuState;
     //create the menu state scene
@@ -42,7 +42,7 @@ var states;
         game = new createjs.Container();
         // Instantiate Game Objects
         sea = new objects.Sea(stage, game);
-        plane = new objects.Fish(stage, game);
+        fish = new objects.Fish(stage, game);
         // Show Cursor
         stage.cursor = "default";
         // Display Game Over

@@ -34,7 +34,7 @@ var managers;
             p2.x = submarine.image.x;
             p2.y = submarine.image.y;
             if (this.distance(p1, p2) < ((this.fish.height / 2) + (submarine.height / 2))) {
-                createjs.Sound.play("thunder");
+                createjs.Sound.play("explode");
                 this.scoreboard.lives -= 1;
                 submarine.reset();
             }
@@ -48,7 +48,7 @@ var managers;
             p2.x = this.smallFish.image.x;
             p2.y = this.smallFish.image.y;
             if (this.distance(p1, p2) < ((this.fish.height / 2) + (this.smallFish.height / 2))) {
-                createjs.Sound.play("yay");
+                createjs.Sound.play("pickup");
                 this.scoreboard.score += 100;
                 this.smallFish.reset();
             }

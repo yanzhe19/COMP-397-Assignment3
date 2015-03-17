@@ -4,9 +4,9 @@ var managers;
     var assetManifest = [
         { id: "loading", src: "assets/images/loading.jpg" },
         { id: "sea", src: "assets/images/sea.jpg" },
-        { id: "engine", src: "assets/sounds/engine.ogg" },
-        { id: "thunder", src: "assets/sounds/thunder.ogg" },
-        { id: "yay", src: "assets/sounds/yay.ogg" }
+        { id: "explode", src: "assets/sounds/explosion.wav" },
+        { id: "pickup", src: "assets/sounds/pickup.wav" },
+        { id: "oceanSound", src: "assets/sounds/ocean.mp3" }
     ];
     // SpriteSheet Data Object
     var spriteSheetData = {

@@ -21,8 +21,9 @@ var objects;
                 this.reset();
             }
             if (this.image.y <= 120) {
-                this.image.y += Math.abs(this.dy);
+                this.dy = Math.abs(this.dy);
             }
+            this.image.y += this.dy;
         };
         Submarine.prototype.reset = function () {
             this.image.y = Math.floor(Math.random() * (this.stage.canvas.height - 100) + 100);

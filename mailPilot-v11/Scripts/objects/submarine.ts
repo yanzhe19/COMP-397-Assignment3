@@ -30,8 +30,9 @@ module objects {
             }
 
             if (this.image.y <= 120) {
-                this.image.y += Math.abs(this.dy);
+                this.dy = Math.abs(this.dy);
             }
+            this.image.y += this.dy
         }
 
         reset() {

@@ -64,6 +64,9 @@
     <Content Include="assets\images\sea.jpg" />
     <Content Include="assets\images\smallFish.png" />
     <Content Include="assets\images\submarine.png" />
+    <Content Include="assets\sounds\explosion.wav" />
+    <Content Include="assets\sounds\ocean.mp3" />
+    <Content Include="assets\sounds\pickup.wav" />
     <Content Include="assets\sounds\yay.ogg" />
     <Content Include="assets\sounds\thunder.ogg" />
     <Content Include="assets\sounds\engine.ogg" />
