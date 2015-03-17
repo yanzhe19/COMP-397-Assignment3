@@ -6,11 +6,11 @@ var managers;
 (function (managers) {
     // Collision Manager Class
     var Collision = (function () {
-        function Collision(plane, island, clouds, scoreboard) {
-            this.clouds = [];
-            this.plane = plane;
-            this.island = island;
-            this.clouds = clouds;
+        function Collision(fish, smallFish, submarines, scoreboard) {
+            this.submarines = [];
+            this.fish = fish;
+            this.smallFish = smallFish;
+            this.submarines = submarines;
             this.scoreboard = scoreboard;
         }
         // Utility method - Distance calculation between two points
@@ -25,40 +25,40 @@ var managers;
             result = Math.sqrt(xPoints + yPoints);
             return result;
         };
-        // check collision between plane and any cloud object
-        Collision.prototype.planeAndCloud = function (cloud) {
+        // check collision between fish and any submarine object
+        Collision.prototype.fishAndSubmarine = function (submarine) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = cloud.image.x;
-            p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (cloud.height / 2))) {
+            p1.x = this.fish.image.x;
+            p1.y = this.fish.image.y;
+            p2.x = submarine.image.x;
+            p2.y = submarine.image.y;
+            if (this.distance(p1, p2) < ((this.fish.height / 2) + (submarine.height / 2))) {
                 createjs.Sound.play("thunder");
                 this.scoreboard.lives -= 1;
-                cloud.reset();
+                submarine.reset();
             }
         };
-        // check collision between plane and island
-        Collision.prototype.planeAndIsland = function () {
+        // check collision between fish and smallFish
+        Collision.prototype.fishAndSmallfish = function () {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = this.island.image.x;
-            p2.y = this.island.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (this.island.height / 2))) {
+            p1.x = this.fish.image.x;
+            p1.y = this.fish.image.y;
+            p2.x = this.smallFish.image.x;
+            p2.y = this.smallFish.image.y;
+            if (this.distance(p1, p2) < ((this.fish.height / 2) + (this.smallFish.height / 2))) {
                 createjs.Sound.play("yay");
                 this.scoreboard.score += 100;
-                this.island.reset();
+                this.smallFish.reset();
             }
         };
         // Utility Function to Check Collisions
         Collision.prototype.update = function () {
-            for (var count = 0; count < constants.CLOUD_NUM; count++) {
-                this.planeAndCloud(this.clouds[count]);
+            for (var count = 0; count < constants.SUBMARINE_NUM; count++) {
+                this.fishAndSubmarine(this.submarines[count]);
             }
-            this.planeAndIsland();
+            this.fishAndSmallfish();
         };
         return Collision;
     })();

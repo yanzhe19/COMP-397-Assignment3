@@ -6,20 +6,26 @@
 /// <reference path="../objects/fish.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../managers/collision.ts" />
+//this is the state for playing game
 var states;
 (function (states) {
     function playState() {
+        // +++++++++++++++++++++++++++++Update play state scene+++++++++++++++++++++++++++++++++++
         sea.update();
-        island.update();
-        plane.update();
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
-            clouds[count].update();
+        smallFish.update();
+        fish.update();
+        for (var count = 0; count < constants.SUBMARINE_NUM; count++) {
+            submarines[count].update();
         }
+        //check collision of objects
         collision.update();
+        //update the score board
         scoreboard.update();
+        // +++++++++++++++++++++++++++++End of Update play state scene+++++++++++++++++++++++++++++++++++
+        //check if player died, if died, go to game over state
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
-            plane.destroy();
+            fish.destroy();
             game.removeAllChildren();
             game.removeAllEventListeners();
             currentState = constants.GAME_OVER_STATE;
@@ -27,24 +33,25 @@ var states;
         }
     }
     states.playState = playState;
-    // play state Function
+    // play state Function, show the paly scene
     function play() {
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
         sea = new objects.Sea(stage, game);
-        island = new objects.SmallFish(stage, game);
-        plane = new objects.Fish(stage, game);
+        smallFish = new objects.SmallFish(stage, game);
+        fish = new objects.Fish(stage, game);
         // Show Cursor
         stage.cursor = "none";
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
-            clouds[count] = new objects.Submarine(stage, game);
-            console.log(clouds[count]);
+        for (var count = 0; count < constants.SUBMARINE_NUM; count++) {
+            submarines[count] = new objects.Submarine(stage, game);
+            console.log(submarines[count]);
         }
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
         // Instantiate Collision Manager
-        collision = new managers.Collision(plane, island, clouds, scoreboard);
+        collision = new managers.Collision(fish, smallFish, submarines, scoreboard);
+        //add game container to stage
         stage.addChild(game);
     }
     states.play = play;

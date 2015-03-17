@@ -15,7 +15,7 @@ module objects {
             this.image = new createjs.Sprite(managers.Assets.atlas, "submarine");
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
-            console.log(this.width,this.height);
+            // console.log(this.width,this.height);
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
             this.reset();
@@ -35,7 +35,7 @@ module objects {
         }
 
         reset() {
-            this.image.y = Math.floor(Math.random() * (this.stage.canvas.height -100) + 100);
+            this.image.y = Math.floor(Math.random() * (this.stage.canvas.height - 100) + 100);
             this.dx = Math.floor(Math.random() * 5 + 2);
             this.dy = Math.floor(Math.random() * -5) + Math.floor(Math.random() * 5);
             this.image.x = this.stage.canvas.width + this.width;

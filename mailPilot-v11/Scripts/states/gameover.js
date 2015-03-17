@@ -8,6 +8,7 @@
 /// <reference path="../objects/scoreboard.ts" />
 var states;
 (function (states) {
+    //this is the game over state function, sea background update for game over state
     function gameOverState() {
         sea.update();
     }
@@ -33,10 +34,10 @@ var states;
         // Show Cursor
         stage.cursor = "default";
         // Display Game Over
-        gameOverLabel = new objects.Label(stage.canvas.width / 2, 40, "GAME OVER");
+        gameOverLabel = new objects.Label(stage.canvas.width / 2, 40, "Oh! GAME OVER");
         game.addChild(gameOverLabel);
         // Display Final Score Label
-        finalScoreLabel = new objects.Label(stage.canvas.width / 2, 120, "FINAL SCORE");
+        finalScoreLabel = new objects.Label(stage.canvas.width / 2, 120, "The Final Score you got is:");
         game.addChild(finalScoreLabel);
         // Display Final Score
         finalScore = new objects.Label(stage.canvas.width / 2, 160, scoreboard.score.toString());
@@ -45,6 +46,7 @@ var states;
         tryAgain = new objects.Button(stage.canvas.width / 2, 300, "btnTryAgain");
         game.addChild(tryAgain);
         tryAgain.addEventListener("click", tryAgainClicked);
+        //add the game container to stage
         stage.addChild(game);
     }
     states.gameOver = gameOver;

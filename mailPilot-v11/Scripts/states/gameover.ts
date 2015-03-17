@@ -7,6 +7,7 @@
 /// <reference path="../objects/fish.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 module states {
+    //this is the game over state function, sea background update for game over state
     export function gameOverState() {
         sea.update();
     }
@@ -36,11 +37,11 @@ module states {
         stage.cursor = "default";
 
         // Display Game Over
-        gameOverLabel = new objects.Label(stage.canvas.width / 2, 40, "GAME OVER");
+        gameOverLabel = new objects.Label(stage.canvas.width / 2, 40, "Oh! GAME OVER");
         game.addChild(gameOverLabel);
 
         // Display Final Score Label
-        finalScoreLabel = new objects.Label(stage.canvas.width / 2, 120, "FINAL SCORE");
+        finalScoreLabel = new objects.Label(stage.canvas.width / 2, 120, "The Final Score you got is:");
         game.addChild(finalScoreLabel);
 
         // Display Final Score
@@ -52,6 +53,7 @@ module states {
         game.addChild(tryAgain);
         tryAgain.addEventListener("click", tryAgainClicked);
 
+        //add the game container to stage
         stage.addChild(game);
 
     }

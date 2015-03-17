@@ -12,22 +12,27 @@
 /// <reference path="states/menu.ts" />
 /// <reference path="states/instruction.ts" />
 /// <reference path="states/gameover.ts" />
-// Mail Pilot Version 11 - Added basic state machine structure - Added Button and Label classes
-// Changed online repo
+// Big Fish Version 2.0
+//+++++++++++++++++++++++++++++++++++++++++++variable section++++++++++++++++++++++++++++++++
+//stage and game container
 var stage;
 var game;
 var sea;
-var plane;
-var island;
-var clouds = []; // Clouds array;
+var fish;
+var smallFish;
+var submarines = []; // submarine array;
 var scoreboard;
+//collision variables
 var collision;
+//Buttons needed for the big fish game
 var tryAgain;
 var playButton;
 var instructionBtn;
 var goBackBtn;
+//state variables
 var currentState;
 var currentStateFunction;
+//+++++++++++++++++++++++++++++++++++++++++++END of variable section++++++++++++++++++++++++++++++++
 // Preload function - Loads Assets and initializes game;
 function preload() {
     managers.Assets.init();
@@ -54,6 +59,7 @@ function gameLoop(event) {
     currentStateFunction();
     stage.update();
 }
+//function to change game state
 function changeState(state) {
     switch (state) {
         case constants.MENU_STATE:

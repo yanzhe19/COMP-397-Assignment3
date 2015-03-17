@@ -8,6 +8,8 @@
 /// <reference path="../objects/label.ts" />
 var states;
 (function (states) {
+    //This is the menu state
+    //event listener when play button of menu screen clicked
     function playButtonClicked(event) {
         stage.removeChild(game);
         plane.destroy();
@@ -17,6 +19,7 @@ var states;
         changeState(currentState);
     }
     states.playButtonClicked = playButtonClicked;
+    //event listener when instruction button of menu screen clicked
     function instructionBtnClicked(event) {
         stage.removeChild(game);
         plane.destroy();
@@ -26,11 +29,13 @@ var states;
         changeState(currentState);
     }
     states.instructionBtnClicked = instructionBtnClicked;
+    //menu state function, updates for menu states
     function menuState() {
         sea.update();
         plane.update();
     }
     states.menuState = menuState;
+    //create the menu state scene
     function menu() {
         var gameNameLabel;
         // Declare new Game Container
@@ -41,7 +46,7 @@ var states;
         // Show Cursor
         stage.cursor = "default";
         // Display Game Over
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "MAIL PILOT");
+        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "Big Fish!");
         game.addChild(gameNameLabel);
         // Display Instruction Button
         instructionBtn = new objects.Button(stage.canvas.width / 2, 230, "btnInstruction");
@@ -51,6 +56,7 @@ var states;
         playButton = new objects.Button(stage.canvas.width / 2, 300, "btnPlay");
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
+        //add game container to the stage
         stage.addChild(game);
     }
     states.menu = menu;
