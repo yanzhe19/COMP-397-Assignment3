@@ -1,3 +1,6 @@
+/*Source  file  name: asset.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
+Date  last  Modified: 2015_3_18,  Program description： This is the assets manager file which controls all the asset(image,audio,sprite sheet and so on) used in the game,
+Revision  History : Version 2.0*/
 var managers;
 (function (managers) {
     // Image and Sound Manifest;
@@ -10,23 +13,6 @@ var managers;
     ];
     // SpriteSheet Data Object
     var spriteSheetData = {
-        //"images": ["assets/images/atlas.png"],
-        //"frames": [
-        //    [2, 2, 226, 178],
-        //    [230, 2, 211, 69],
-        //    [443, 69, 62, 63],
-        //    [443, 2, 65, 65],
-        //    [230, 73, 211, 69],
-        //    [230, 144, 211, 69]
-        //],
-        //"animations": {
-        //    "cloud": [0],
-        //    "instructionsButton": [1],
-        //    "island": [2],
-        //    "plane": [3],
-        //    "playButton": [4],
-        //    "tryAgainButton": [5]
-        //}
         "images": ["assets/images/atlas.png"],
         "frames": [
             [2, 2, 200, 100],

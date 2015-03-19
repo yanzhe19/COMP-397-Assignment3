@@ -1,10 +1,13 @@
+/// <reference path="../constants.ts" />
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-/// <reference path="../constants.ts" />
+/*Source  file  name: label.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
+Date  last  Modified: 2015_3_18,  Program description： This file is the label object file, it's the obejct which defines all labels in the game,
+Revision  History : Version 2.0*/
 var objects;
 (function (objects) {
     var Label = (function (_super) {

@@ -1,6 +1,9 @@
 var states;
 (function (states) {
     // This is the Instruction State
+    /*Source  file  name: instruction.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
+    Date  last  Modified: 2015_3_18,  Program description： This file is the instruction state file, it controls and create the instruction state and scene,
+    Revision  History : Version 2.0*/
     function instructionState() {
         sea.update();
     }

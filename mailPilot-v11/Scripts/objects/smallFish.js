@@ -1,7 +1,10 @@
 /// <reference path="../managers/asset.ts" />
 var objects;
 (function (objects) {
-    // Island Class
+    // small fish Class
+    /*Source  file  name: smallFish.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
+    Date  last  Modified: 2015_3_18,  Program description： This file is the smallFish object file, it's the obejct of small fish(bonus point),
+    Revision  History : Version 2.0*/
     var SmallFish = (function () {
         function SmallFish(stage, game) {
             this.stage = stage;

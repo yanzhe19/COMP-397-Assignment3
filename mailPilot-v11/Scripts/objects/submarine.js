@@ -2,6 +2,9 @@
 var objects;
 (function (objects) {
     // submarine class
+    /*Source  file  name: submarine.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
+    Date  last  Modified: 2015_3_18,  Program description： This file is the submarine object file, it's the obejct of submarine(enemy),
+    Revision  History : Version 2.0*/
     var Submarine = (function () {
         function Submarine(stage, game) {
             this.stage = stage;

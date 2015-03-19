@@ -1,4 +1,8 @@
 ﻿/// <reference path="../managers/asset.ts" />
+
+    /*Source  file  name: fish.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,  
+    Date  last  Modified: 2015_3_18,  Program description： This file is the fish(player Avatar) object file, it's the obejct of the player Avatar,
+    Revision  History : Version 2.0*/
 module objects {
     // Plane Class
     export class Fish {

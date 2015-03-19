@@ -13,6 +13,9 @@
 /// <reference path="states/instruction.ts" />
 /// <reference path="states/gameover.ts" />
 // Big Fish Version 2.0
+/*Source  file  name: game.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
+Date  last  Modified: 2015_3_18,  Program description： This file is the main game typescript file and controls the game loop and game state
+Revision  History : Version 2.0*/
 //+++++++++++++++++++++++++++++++++++++++++++variable section++++++++++++++++++++++++++++++++
 //stage and game container
 var stage;

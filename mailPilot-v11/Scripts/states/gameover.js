@@ -9,7 +9,11 @@
 var states;
 (function (states) {
     //this is the game over state function, sea background update for game over state
+    /*Source  file  name: gameover.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
+    Date  last  Modified: 2015_3_18,  Program description： This file is the game over state file, it controls and create the game over state and scene,
+    Revision  History : Version 2.0*/
     function gameOverState() {
+        //update the sea background
         sea.update();
     }
     states.gameOverState = gameOverState;

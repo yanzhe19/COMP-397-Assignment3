@@ -1,4 +1,8 @@
 ﻿module constants {
+    /*Source  file  name: constants.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,  
+    Date  last  Modified: 2015_3_18,  Program description： This file is the constants.ts file which contains the constant variables used in game.
+    Revision  History : Version 2.0*/
+
     // State Machine Constants
     export var MENU_STATE: number = 0;
     export var PLAY_STATE: number = 1;
