@@ -29,6 +29,16 @@ module states {
         changeState(currentState);
     }
 
+    // Restart Game when Back to Menu Button is clicked
+    export function backToMenuClicked(event: MouseEvent) {
+        stage.removeChild(game);
+        game.removeAllChildren();
+        game.removeAllEventListeners();
+        //change to play state
+        currentState = constants.MENU_STATE;
+        changeState(currentState);
+    }
+
     // Game Over Scene
     export function gameOver() {
         //labels in game over interface
@@ -58,9 +68,14 @@ module states {
         game.addChild(finalScore);
 
         // Display Try Again Button
-        tryAgain = new objects.Button(stage.canvas.width / 2, 300, "btnTryAgain");
+        tryAgain = new objects.Button(stage.canvas.width * 3 / 4, 300, "btnTryAgain");
         game.addChild(tryAgain);
         tryAgain.addEventListener("click", tryAgainClicked);
+        
+        // Display Back to Menu Button
+        backToMenuBtn = new objects.Button(stage.canvas.width / 4, 300, "btnBackMenu");
+        game.addChild(backToMenuBtn);
+        backToMenuBtn.addEventListener("click", backToMenuClicked);
 
         //add the game container to stage
         stage.addChild(game);

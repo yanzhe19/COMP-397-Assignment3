@@ -20,18 +20,20 @@ var managers;
             [204, 2, 200, 100],
             [2, 104, 200, 100],
             [204, 104, 200, 100],
-            [2, 305, 120, 82],
-            [124, 305, 70, 63],
-            [2, 206, 150, 97]
+            [2, 206, 200, 100],
+            [2, 308, 120, 82],
+            [124, 308, 70, 63],
+            [204, 206, 150, 97]
         ],
         "animations": {
             "btnBack": [0],
-            "btnInstruction": [1],
-            "btnPlay": [2],
-            "btnTryAgain": [3],
-            "fish": [4],
-            "smallFish": [5],
-            "submarine": [6]
+            "btnBackMenu": [1],
+            "btnInstruction": [2],
+            "btnPlay": [3],
+            "btnTryAgain": [4],
+            "fish": [5],
+            "smallFish": [6],
+            "submarine": [7]
         }
     };
     // Asset Manager Class

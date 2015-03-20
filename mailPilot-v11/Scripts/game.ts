@@ -39,6 +39,7 @@ var tryAgain: objects.Button;
 var playButton: objects.Button;
 var instructionBtn: objects.Button;
 var goBackBtn: objects.Button;
+var backToMenuBtn: objects.Button;
 
 //state variables
 var currentState: number;

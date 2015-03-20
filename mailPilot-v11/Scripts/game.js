@@ -34,6 +34,7 @@ var tryAgain;
 var playButton;
 var instructionBtn;
 var goBackBtn;
+var backToMenuBtn;
 //state variables
 var currentState;
 var currentStateFunction;
