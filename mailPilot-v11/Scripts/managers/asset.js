@@ -1,6 +1,7 @@
 /*Source  file  name: asset.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
 Date  last  Modified: 2015_3_18,  Program description： This is the assets manager file which controls all the asset(image,audio,sprite sheet and so on) used in the game,
 Revision  History : Version 2.0*/
+//asset manager
 var managers;
 (function (managers) {
     // Image and Sound Manifest;
@@ -37,6 +38,7 @@ var managers;
     var Assets = (function () {
         function Assets() {
         }
+        //load the assets
         Assets.init = function () {
             createjs.Sound.initializeDefaultPlugins();
             this.loader = new createjs.LoadQueue();

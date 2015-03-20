@@ -1,6 +1,8 @@
-﻿    /*Source  file  name: asset.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,  
-    Date  last  Modified: 2015_3_18,  Program description： This is the assets manager file which controls all the asset(image,audio,sprite sheet and so on) used in the game,
-    Revision  History : Version 2.0*/
+﻿/*Source  file  name: asset.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,  
+Date  last  Modified: 2015_3_18,  Program description： This is the assets manager file which controls all the asset(image,audio,sprite sheet and so on) used in the game,
+Revision  History : Version 2.0*/
+
+//asset manager
 module managers {
     // Image and Sound Manifest;
     var assetManifest = [
@@ -25,7 +27,6 @@ module managers {
             [2, 206, 150, 97]
         ],
         "animations": {
-
             "btnBack": [0],
             "btnInstruction": [1],
             "btnPlay": [2],
@@ -44,6 +45,7 @@ module managers {
         public static loader;
         public static atlas: createjs.SpriteSheet;
 
+        //load the assets
         public static init() {
             createjs.Sound.initializeDefaultPlugins();
             this.loader = new createjs.LoadQueue();

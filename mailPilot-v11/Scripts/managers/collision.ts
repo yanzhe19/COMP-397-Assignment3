@@ -3,11 +3,12 @@
 /// <reference path="../objects/fish.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 
-    /*Source  file  name: collision.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,  
-    Date  last  Modified: 2015_3_18,  Program description： This file check if two objects are collide (fish&submarine, fish&smallFish), if collide, the corresponding action will taken(point or life increase/decrease and game over)
-    Revision  History : Version 2.0*/
+/*Source  file  name: collision.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,  
+Date  last  Modified: 2015_3_18,  Program description： This file check if two objects are collide (fish&submarine, fish&smallFish), if collide, the corresponding action will taken(point or life increase/decrease and game over)
+Revision  History : Version 2.0*/
+
+// Collision Manager Class
 module managers {
-    // Collision Manager Class
     export class Collision {
         // class variables
         private fish: objects.Fish;
@@ -15,6 +16,7 @@ module managers {
         private submarines = [];
         private scoreboard: objects.Scoreboard;
 
+        //constructor
         constructor(fish: objects.Fish, smallFishs, submarines, scoreboard: objects.Scoreboard) {
             this.fish = fish;
             this.smallFishs = smallFishs;
@@ -55,7 +57,7 @@ module managers {
         }
 
         // check collision between fish and smallFish
-        private fishAndSmallfish(smallFishInstance:objects.SmallFish) {
+        private fishAndSmallfish(smallFishInstance: objects.SmallFish) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
             p1.x = this.fish.image.x;

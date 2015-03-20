@@ -5,10 +5,11 @@
 /*Source  file  name: collision.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
 Date  last  Modified: 2015_3_18,  Program description： This file check if two objects are collide (fish&submarine, fish&smallFish), if collide, the corresponding action will taken(point or life increase/decrease and game over)
 Revision  History : Version 2.0*/
+// Collision Manager Class
 var managers;
 (function (managers) {
-    // Collision Manager Class
     var Collision = (function () {
+        //constructor
         function Collision(fish, smallFishs, submarines, scoreboard) {
             this.smallFishs = [];
             this.submarines = [];
