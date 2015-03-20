@@ -11,15 +11,16 @@
 Date  last  Modified: 2015_3_18,  Program description： This file is the menu state file, it controls and create the menus state,
 Revision  History : Version 2.0*/
 
+//This is the menu state
 module states {
-    //This is the menu state
-
     //event listener when play button of menu screen clicked
     export function playButtonClicked(event: MouseEvent) {
+        //remove everything from the stage frist
         stage.removeChild(game);
         fish.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
+        //create another state screen --> play state screen
         currentState = constants.PLAY_STATE;
         changeState(currentState);
     }
@@ -30,6 +31,7 @@ module states {
         fish.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
+        //go to the instruction state and screen changed to insturction state
         currentState = constants.INSTRUCTION_STATE;
         changeState(currentState);
     }
@@ -42,6 +44,7 @@ module states {
 
     //create the menu state scene
     export function menu() {
+        //label show the name of game
         var gameNameLabel: objects.Label;
 
         // Declare new Game Container

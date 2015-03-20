@@ -9,10 +9,11 @@ var managers;
 (function (managers) {
     // Collision Manager Class
     var Collision = (function () {
-        function Collision(fish, smallFish, submarines, scoreboard) {
+        function Collision(fish, smallFishs, submarines, scoreboard) {
+            this.smallFishs = [];
             this.submarines = [];
             this.fish = fish;
-            this.smallFish = smallFish;
+            this.smallFishs = smallFishs;
             this.submarines = submarines;
             this.scoreboard = scoreboard;
         }
@@ -43,17 +44,17 @@ var managers;
             }
         };
         // check collision between fish and smallFish
-        Collision.prototype.fishAndSmallfish = function () {
+        Collision.prototype.fishAndSmallfish = function (smallFishInstance) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
             p1.x = this.fish.image.x;
             p1.y = this.fish.image.y;
-            p2.x = this.smallFish.image.x;
-            p2.y = this.smallFish.image.y;
-            if (this.distance(p1, p2) < ((this.fish.height / 2) + (this.smallFish.height / 2))) {
+            p2.x = smallFishInstance.image.x;
+            p2.y = smallFishInstance.image.y;
+            if (this.distance(p1, p2) < ((this.fish.height / 2) + (smallFishInstance.height / 2))) {
                 createjs.Sound.play("pickup");
                 this.scoreboard.score += 100;
-                this.smallFish.reset();
+                smallFishInstance.reset();
             }
         };
         // Utility Function to Check Collisions
@@ -61,7 +62,9 @@ var managers;
             for (var count = 0; count < constants.SUBMARINE_NUM; count++) {
                 this.fishAndSubmarine(this.submarines[count]);
             }
-            this.fishAndSmallfish();
+            for (var count = 0; count < constants.SMALLFISH_NUM; count++) {
+                this.fishAndSmallfish(this.smallFishs[count]);
+            }
         };
         return Collision;
     })();

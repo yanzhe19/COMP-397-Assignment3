@@ -1,8 +1,8 @@
-﻿module objects {
-    // Scoreboard Class
+﻿    // Scoreboard Class
     /*Source  file  name: scoreboard.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,  
     Date  last  Modified: 2015_3_18,  Program description： This file is the scoreboard object file, it's the obejct shows player's current score,
     Revision  History : Version 2.0*/
+module objects {
     export class Scoreboard {
         stage: createjs.Stage;
         game: createjs.Container;

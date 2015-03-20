@@ -1,9 +1,11 @@
+// This is the Instruction State
+/*Source  file  name: instruction.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
+Date  last  Modified: 2015_3_18,  Program description： This file is the instruction state file, it controls and create the instruction state and scene,
+Revision  History : Version 2.0*/
+//This is the instruction state
 var states;
 (function (states) {
-    // This is the Instruction State
-    /*Source  file  name: instruction.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
-    Date  last  Modified: 2015_3_18,  Program description： This file is the instruction state file, it controls and create the instruction state and scene,
-    Revision  History : Version 2.0*/
+    //update the instruction state sea background
     function instructionState() {
         sea.update();
     }
@@ -15,12 +17,14 @@ var states;
         stage.removeChild(game);
         game.removeAllChildren();
         game.removeAllEventListeners();
+        //change state to menu state
         currentState = constants.MENU_STATE;
         changeState(currentState);
     }
     states.goBackBtnClicked = goBackBtnClicked;
     //instruction scene
     function instructionScene() {
+        //array used to display instructions
         var actualInstructionsLine = [];
         var instructionsStringArray = [];
         //game container

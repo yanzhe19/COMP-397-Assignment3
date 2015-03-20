@@ -6,11 +6,14 @@
 /// <reference path="../objects/sea.ts" />
 /// <reference path="../objects/fish.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+
+//this is the game over state function, sea background update for game over state
+/*Source  file  name: gameover.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,  
+Date  last  Modified: 2015_3_18,  Program description： This file is the game over state file, it controls and create the game over state and scene,
+Revision  History : Version 2.0*/
+//this is the game state
 module states {
-    //this is the game over state function, sea background update for game over state
-    /*Source  file  name: gameover.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,  
-    Date  last  Modified: 2015_3_18,  Program description： This file is the game over state file, it controls and create the game over state and scene,
-    Revision  History : Version 2.0*/
+    //update the game over state
     export function gameOverState() {
         //update the sea background
         sea.update();
@@ -21,12 +24,14 @@ module states {
         stage.removeChild(game);
         game.removeAllChildren();
         game.removeAllEventListeners();
+        //change to play state
         currentState = constants.PLAY_STATE;
         changeState(currentState);
     }
 
     // Game Over Scene
     export function gameOver() {
+        //labels in game over interface
         var gameOverLabel: objects.Label;
         var finalScoreLabel: objects.Label;
         var finalScore: objects.Label;

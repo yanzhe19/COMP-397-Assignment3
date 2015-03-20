@@ -1,10 +1,12 @@
 ﻿/// <reference path="../managers/asset.ts" />
-module objects {
     // small fish Class
     /*Source  file  name: smallFish.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,  
     Date  last  Modified: 2015_3_18,  Program description： This file is the smallFish object file, it's the obejct of small fish(bonus point),
     Revision  History : Version 2.0*/
+//this is the small fish object --> which is the object for player avatar to collect points
+module objects {
     export class SmallFish {
+        //define all the properties of small fish class
         image: createjs.Sprite;
         stage: createjs.Stage;
         game: createjs.Container;
@@ -13,6 +15,7 @@ module objects {
         dx: number;
         dy: number;
 
+        //the constructor of small fish class
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
@@ -21,14 +24,15 @@ module objects {
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
-            this.reset();
+            this.reset();       
 
-            this.dx = 5;            
-
+            //add the current small fish to game container
             game.addChild(this.image);
         }
 
+        //function to update small fish class
         update() {
+            //small fish move beyond scene, reset its position
             if (this.image.x < (- this.width)) {
                 this.reset();
             }
@@ -46,6 +50,9 @@ module objects {
             this.image.x = this.stage.canvas.width + this.width;
 
             this.dy = Math.floor(Math.random() * -2) + Math.floor(Math.random() * 2);
+            //set speed of small fish to a constant value
+            this.dx = Math.floor(Math.random() * 3 + 3);
+            //constants.SMALLFISH_SPEED;     
         }
 
         destroy() {

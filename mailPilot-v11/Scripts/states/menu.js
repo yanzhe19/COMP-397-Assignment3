@@ -9,15 +9,17 @@
 /*Source  file  name: menu.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
 Date  last  Modified: 2015_3_18,  Program description： This file is the menu state file, it controls and create the menus state,
 Revision  History : Version 2.0*/
+//This is the menu state
 var states;
 (function (states) {
-    //This is the menu state
     //event listener when play button of menu screen clicked
     function playButtonClicked(event) {
+        //remove everything from the stage frist
         stage.removeChild(game);
         fish.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
+        //create another state screen --> play state screen
         currentState = constants.PLAY_STATE;
         changeState(currentState);
     }
@@ -28,6 +30,7 @@ var states;
         fish.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
+        //go to the instruction state and screen changed to insturction state
         currentState = constants.INSTRUCTION_STATE;
         changeState(currentState);
     }
@@ -40,6 +43,7 @@ var states;
     states.menuState = menuState;
     //create the menu state scene
     function menu() {
+        //label show the name of game
         var gameNameLabel;
         // Declare new Game Container
         game = new createjs.Container();

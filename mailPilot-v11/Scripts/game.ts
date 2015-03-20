@@ -23,10 +23,11 @@ Revision  History : Version 2.0*/
 var stage: createjs.Stage;
 var game: createjs.Container;
 
-
+//game variables
 var sea: objects.Sea;
 var fish: objects.Fish;
-var smallFish: objects.SmallFish;
+//var smallFish: objects.SmallFish;
+var smallFishs = [];
 var submarines = []; // submarine array;
 var scoreboard: objects.Scoreboard;
 
@@ -48,6 +49,7 @@ var currentStateFunction;
 // Preload function - Loads Assets and initializes game;
 function preload(): void {
     managers.Assets.init();
+    //after assets loaded, invoke init function
     managers.Assets.loader.addEventListener("complete", init);
 }
 
@@ -59,6 +61,7 @@ function init(): void {
     createjs.Ticker.addEventListener("tick", gameLoop);
     optimizeForMobile();
 
+    //set the current game staate to MENU_STATE
     currentState = constants.MENU_STATE;
     changeState(currentState);
 }
@@ -72,6 +75,7 @@ function optimizeForMobile() {
 
 // Game Loop
 function gameLoop(event): void {
+    //invoke the current state function, to update game state accordingly
     currentStateFunction();
     stage.update();
 }
@@ -81,14 +85,14 @@ function changeState(state: number): void {
     // Launch Various "screens"
     switch (state) {
         case constants.MENU_STATE:
-            // instantiate menu screen
             currentStateFunction = states.menuState;
+            // instantiate menu screen
             states.menu();
             break;
 
         case constants.PLAY_STATE:
-            // instantiate play screen
             currentStateFunction = states.playState;
+            // instantiate play screen
             states.play();
             break;
 

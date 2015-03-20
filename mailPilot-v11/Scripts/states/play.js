@@ -10,12 +10,16 @@
 /*Source  file  name: menu.ts, Author's  name: Zhe Yan (300706310),  Last  Modified  by: Zhe Yan,
 Date  last  Modified: 2015_3_18,  Program description： This file is the menu state file, it controls and create the menus state,
 Revision  History : Version 2.0*/
+//the play state of game
 var states;
 (function (states) {
+    //update the play state
     function playState() {
         // +++++++++++++++++++++++++++++Update play state scene+++++++++++++++++++++++++++++++++++
         sea.update();
-        smallFish.update();
+        for (var count = 0; count < constants.SMALLFISH_NUM; count++) {
+            smallFishs[count].update();
+        }
         fish.update();
         for (var count = 0; count < constants.SUBMARINE_NUM; count++) {
             submarines[count].update();
@@ -25,12 +29,14 @@ var states;
         //update the score board
         scoreboard.update();
         // +++++++++++++++++++++++++++++End of Update play state scene+++++++++++++++++++++++++++++++++++
-        //check if player died, if died, go to game over state
+        //check if player dead, if dead, go to game over state
         if (scoreboard.lives <= 0) {
+            //remove everything from the stage first
             stage.removeChild(game);
             fish.destroy();
             game.removeAllChildren();
             game.removeAllEventListeners();
+            //create the other state screen --> game over state screen
             currentState = constants.GAME_OVER_STATE;
             changeState(currentState);
         }
@@ -42,17 +48,20 @@ var states;
         game = new createjs.Container();
         // Instantiate Game Objects
         sea = new objects.Sea(stage, game);
-        smallFish = new objects.SmallFish(stage, game);
+        //smallFish = new objects.SmallFish(stage, game);
         fish = new objects.Fish(stage, game);
         // Show Cursor
         stage.cursor = "none";
         for (var count = 0; count < constants.SUBMARINE_NUM; count++) {
             submarines[count] = new objects.Submarine(stage, game);
         }
+        for (var count = 0; count < constants.SMALLFISH_NUM; count++) {
+            smallFishs[count] = new objects.SmallFish(stage, game);
+        }
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
         // Instantiate Collision Manager
-        collision = new managers.Collision(fish, smallFish, submarines, scoreboard);
+        collision = new managers.Collision(fish, smallFishs, submarines, scoreboard);
         //add game container to stage
         stage.addChild(game);
     }
